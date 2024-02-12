@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1{
+font-weight: 400;
+line-height: 1.2;
+}
+
+.heart-container {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ANIMATION */
+@keyframes color-change {
+  0% {
+    background: #DC143C;
+  }
+  25% {
+    background: purple;
+  }
+  50% {
+    background: white;
+  }
+  75% {
+    background: #E0115F;
+  }
+  100% {
+    background: #DC143C;
+  }
+}
+
+/* HEART */
+
+.heart {
+  background-color: #DC143C;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 50px;
+  height: 50px;
+}
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #DC143C;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+.heart:before {
+  top: -25px;
+  left: 0;
+}
+.heart:after {
+  left: 25px;
+  top: 0;
+}
+.heart, .heart:before, .heart:after {
+  animation-name: color-change;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+/* HEART 2 */
+.heart-2, .heart-2:before, .heart-2:after {
+  animation-delay: 1s;
+}
+/* HEART 3 */
+.heart-3, .heart-3:before, .heart-3:after {
+  animation-delay: 2s;
+}
